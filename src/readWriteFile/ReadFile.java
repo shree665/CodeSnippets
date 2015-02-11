@@ -92,18 +92,18 @@ public class ReadFile {
 	public static void main(String[] args) {
 		//reading file using scanner
 		try {
-			ReadFile.readFileMethod3(new File("../MyWebProjectCodes/myTest.txt"));
+			ReadFile.readFileMethod3(new File("../MyWebProjectCodes/resources/myTest.txt"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		//reading file FileReader and buffered reader
-		ReadFile.readFileMethod2(new File("../MyWebProjectCodes/myTest.txt"));
+		ReadFile.readFileMethod2(new File("../MyWebProjectCodes/resources/myTest.txt"));
 		System.out.println();
 		
 		//reading file in fileinputstreadm
-		ReadFile.readFileMethod1(new File("../MyWebProjectCodes/myTest.txt"));
+		ReadFile.readFileMethod1(new File("../MyWebProjectCodes/resources/myTest.txt"));
 		System.out.println();
 	}
 
