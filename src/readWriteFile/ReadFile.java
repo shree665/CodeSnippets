@@ -98,11 +98,11 @@ public class ReadFile {
 			e.printStackTrace();
 		}
 		
-		//reading file FileReader and buffered reader
+		//reading file FileReader and BufferedReader
 		ReadFile.readFileMethod2(new File("../MyWebProjectCodes/resources/myTest.txt"));
 		System.out.println();
 		
-		//reading file in fileinputstreadm
+		//reading file in fileInputStream
 		ReadFile.readFileMethod1(new File("../MyWebProjectCodes/resources/myTest.txt"));
 		System.out.println();
 	}
