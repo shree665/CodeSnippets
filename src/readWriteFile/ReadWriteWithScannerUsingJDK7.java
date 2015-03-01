@@ -7,26 +7,30 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-/** Assumes UTF-8 encoding. JDK 7+. */
-public class ReadWithScannerUsingJDK7 {
+/**
+ * This example demonstrates using Scanner to read a file containing lines of structured data. 
+ * One Scanner is used to read in each line, and a second Scanner is used to parse each line 
+ * into a simple name-value pair. The Scanner class is only used for reading, not for writing.
+ */
+public class ReadWriteWithScannerUsingJDK7 {
 	
-	/**
-	 * This example demonstrates using Scanner to read a file containing lines of structured data. 
-	 * One Scanner is used to read in each line, and a second Scanner is used to parse each line 
-	 * into a simple name-value pair. The Scanner class is only used for reading, not for writing.
-	 */
 	  //local variables 
 	  private static Path filepath;
-	  private final static String QUOTE = "'";
 	  private final static Charset ENCODING = StandardCharsets.UTF_8;  
 	  
-	  /** Template method that calls {@link #processLine(String)}.  */
+	  /**
+	   * Reading file using Scanner
+	   * 
+	   * @throws IOException
+	   */
 	  public final static void processLineByLine() throws IOException {
-	    try (Scanner scanner =  new Scanner(filepath, ENCODING.name())){
+		  Scanner scanner =  new Scanner(filepath, ENCODING.name());
 	      while (scanner.hasNextLine()){
 	        processLine(scanner.nextLine());
-	      }      
-	    }
+	      } 
+	      
+	      //closing resource
+	      scanner.close();
 	  }
 	  
 	  /**
@@ -43,7 +47,7 @@ public class ReadWithScannerUsingJDK7 {
 	      //assumes the line has a certain structure
 	      String name = scanner.next();
 	      String value = scanner.next();
-	      log("Name is : " + quote(name.trim()) + ", and Value is : " + quote(value.trim()));
+	      log("Name is : " + name.trim() + ", and Value is : " + value.trim());
 	    }
 	    else {
 	      log("Empty or invalid line. Unable to process.");
@@ -55,14 +59,12 @@ public class ReadWithScannerUsingJDK7 {
 	    System.out.println(object.toString());
 	  }
 	  
-	  private static String quote(String aText){
-	    return QUOTE + aText + QUOTE;
-	  }
 
 	  public Path getFilePath() {
 			return filepath;
 	  }
 	  
+	  //getting the file path from the file
 	  public void setFilePath(String filename) {
 		  filepath = Paths.get(filename);
 	  }

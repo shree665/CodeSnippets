@@ -1,0 +1,4 @@
+apple = 2
+orange = 5
+apple = red
+orange = orange

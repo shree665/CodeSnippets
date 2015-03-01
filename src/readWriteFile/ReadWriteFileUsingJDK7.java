@@ -15,9 +15,8 @@ import java.util.Scanner;
  * Following all methods are being used to read and write text files in JDK 7 and above.
  * If you pay close attention, closing resources is taken care by Java in all methods below.
  * We need to define the char sets on JDK 7 and above method to read and write text files.
- *
  */
-public class ReadFileUsingJDK7 {
+public class ReadWriteFileUsingJDK7 {
 	  final static String FILE_NAME = "C:\\Temp\\input.txt";
 	  final static String OUTPUT_FILE_NAME = "C:\\Temp\\output.txt";
 	  final static Charset ENCODING = StandardCharsets.UTF_8;
